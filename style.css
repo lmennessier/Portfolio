@@ -1,0 +1,672 @@
+/* Importation des polices Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
+
+/* Variables CSS pour le thème clair */
+:root {
+  --header-textfont: 'Poetsen One', sans-serif;
+  --text-font: 'Noto Sans Mono', monospace;
+
+  --iris-1: #fdfdff;
+  --iris-2: #f8f8ff;
+  --iris-3: #f0f1fe;
+  --iris-4: #e6e7ff;
+  --iris-5: #dadcff;
+  --iris-6: #cbcdff;
+  --iris-7: #b8baf8;
+  --iris-8: #9b9ef0;
+  --iris-9: #5b5bd6;
+  --iris-10: #5151cd;
+  --iris-11: #5753c6;
+  --iris-12: #272962;
+}
+
+/* Variables CSS pour le thème sombre */
+[data-theme="dark"] {
+  --iris-1: #13131e;
+  --iris-2: #171625;
+  --iris-3: #202248;
+  --iris-4: #262a65;
+  --iris-5: #303374;
+  --iris-6: #3d3e82;
+  --iris-7: #4a4a95;
+  --iris-8: #5958b1;
+  --iris-9: #5b5bd6;
+  --iris-10: #6e6ade;
+  --iris-11: #b1a9ff;
+  --iris-12: #e0dffe;
+}
+
+/* Styles pour le header */
+nav {
+  border-color: var(--iris-6);
+  background-color: var(--iris-2);
+}
+
+
+.navbar-brand {
+  color: var(--iris-12);
+  font-family: var(--header-textfont);
+}
+
+.navbar-brand:hover{
+  color: var(--iris-12);
+  transform: scale(1.05);
+}
+.navbar-brand:visited{
+  color: var(--iris-12);
+}
+
+.nav-link {
+  font-family: var(--header-textfont);
+  color: var(--iris-11);
+  margin: 20px;
+}
+.nav-link:visited {
+  color: var(--iris-11);
+}
+.nav-link:hover {
+  transform: scale(1.1);
+  color: var(--iris-12);
+}
+
+
+
+/* Styles pour le switch de thème */
+
+/* Supprimer l'icône par défaut */
+.navbar-toggler-icon {
+  background-image: none;
+  display: inline-block;
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* Changer la couleur de la bordure */
+.navbar-toggler {
+  border: 2px solid var(--iris-8);
+}
+
+/* Styles pour l'icône hamburger personnalisée */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon .icon-bar {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--iris-12);
+  border-radius: 10px;
+}
+
+.navbar-toggler-icon::before {
+  top: 0;
+}
+
+.navbar-toggler-icon::after {
+  bottom: 0;
+}
+
+.navbar-toggler-icon .icon-bar {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.theme-switch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  direction: rtl;
+}
+#theme-checkbox {
+  display: none;
+}
+#theme-checkbox + label {
+  font-size: 2rem;
+  height: 1em;
+  width: 2.5em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--iris-3);
+  position: relative;
+}
+#theme-checkbox:checked + label {
+  background-color: var(--iris-11);
+}
+#theme-checkbox + label div {
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: inherit;
+  position: absolute;
+  top: 0.1em;
+  left: 0.1em;
+  z-index: 10;
+  transition: 0.5s cubic-bezier(1, 0.33, 0.11, 1.34);
+  background-color: var(--iris-12);
+}
+#theme-checkbox:checked + label div {
+  left: 1.6em;
+  background-color: var(--iris-1);
+}
+#theme-checkbox + label span {
+  display: flex;
+}
+#theme-checkbox + label svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  padding: 0.15em;
+  box-sizing: border-box;
+}
+#theme-checkbox + label span:first-of-type {
+  color: var(--iris-12);
+}
+#theme-checkbox + label span:last-of-type {
+  color: var(--iris-1);
+}
+
+/* Styles pour la section principale */
+.home {
+  background-color: var(--iris-1);
+  padding: 15vh 5%;
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 10vh 5%;
+  }
+}
+
+.home-content {
+  font-family: var(--header-textfont);
+  color: var(--iris-12);
+  
+}
+
+/* Styles pour l'image de profil */
+.profile-image {
+  width: 250px; /* Ajustez la taille selon vos préférences */
+  height: 250px; /* Ajustez la taille selon vos préférences */
+  border-radius: 50%; /* Pour un effet circulaire */
+  object-fit: cover; /* Pour ajuster l'image au conteneur */
+  border: 2px solid var(--iris-8); /* Optionnel : ajoute une bordure */
+}
+
+/* Ajuster l'espacement */
+.home-content {
+  margin-top: 100px; /* Ajustez si nécessaire */
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    margin-top: 100px; /* Ajustez pour les petits écrans */
+  }
+}
+
+.sous-content {
+  color: var(--iris-11);
+  font-family: var(--text-font);
+}
+
+/* Style pour le curseur clignotant */
+.cursor {
+  display: inline-block;
+  font-weight: normal;
+  font-size: inherit;
+  color: inherit;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  49% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
+/* Styles pour les logos de contact animés */
+.contacts-logos a {
+  text-decoration: none;
+  color: var(--iris-11);
+}
+.contacts-logos a .layer {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  transition: transform 0.3s;
+}
+.contacts-logos a .layer span.fab {
+  background-color: var(--iris-3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+  line-height: 55px;
+  text-align: center;
+  color: var(--iris-11);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.contacts-logos a .layer span.fas {
+  background-color: var(--iris-3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+  line-height: 55px;
+  text-align: center;
+  color: var(--iris-11);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+.contacts-logos a:hover .layer {
+  transform: rotate(-35deg) skew(20deg);
+  color: var(--iris-11);
+}
+.contacts-logos a:hover .layer span.fab {
+  background-color: var(--iris-4);
+}
+.contacts-logos a .layer span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid var(--iris-8);
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.contacts-logos a:hover .layer span:nth-child(1) {
+  opacity: 0.2;
+}
+.contacts-logos a:hover .layer span:nth-child(2) {
+  opacity: 0.4;
+  transform: translate(5px, -5px);
+}
+.contacts-logos a:hover .layer span:nth-child(3) {
+  opacity: 0.6;
+  transform: translate(10px, -10px);
+}
+.contacts-logos a:hover .layer span:nth-child(4) {
+  opacity: 0.8;
+  transform: translate(15px, -15px);
+}
+.contact-text {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  margin-top: 10px;
+}
+.contacts-logos a:hover .contact-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Styles pour la section À propos */
+.about {
+  background-color: var(--iris-1);
+}
+
+.about h3 {
+  font-family: var(--header-textfont);
+  color: var(--iris-12);
+  text-align: center;
+}
+
+.about p {
+  text-align:start;
+}
+
+.card-about {
+  font-family: var(--text-font);
+  color: var(--iris-11);
+  border: 1px solid var(--iris-6);
+  border-radius: 20px;
+  background-color: var(--iris-2);
+  margin: 20px auto;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .card-about {
+    margin: 30px;
+    padding: 20px;
+  }
+}
+
+.button:hover {
+  color: white;
+}
+
+.skills .comps-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.comp-logo {
+  margin: 10px;
+}
+
+
+.button {
+  justify-content: center;
+}
+.card-about .CV{
+  color: white;
+  border: 1px solid var(--iris-8);
+  background-color: var(--iris-9);
+  transition: transform 0.3s;
+}
+.card-about .CV:hover {
+  background-color: var(--iris-10);
+  transform: scale(1.1);
+}
+
+/* Styles pour les compétences */
+
+/* Styles pour les boutons des compétences */
+.comp-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+
+.comp-btn:focus {
+  outline: none;
+}
+.comp-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+.comp-btn .bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--iris-3);
+  padding: 20px;
+  border: 1px solid var(--iris-7);
+  border-radius: 50%;
+  margin: 10px auto;
+}
+
+.comp-btn .fab {
+  font-size: 3rem;
+  color: var(--iris-11);
+}
+
+.comp-btn .fas {
+  font-size: 3rem;
+  color: var(--iris-11);
+}
+
+.bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--iris-3);
+  padding: 20px;
+  border: 1px solid var(--iris-7);
+  border-radius: 50%;
+  margin: 10px auto;
+}
+.comp-text {
+  font-size: 1rem;
+  font-family: var(--text-font);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.comp-logo:hover .comp-text {
+  opacity: 1;
+  visibility: visible;
+}
+.bubble:hover {
+  transform: scale(1.1);
+}
+@keyframes float {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Styles pour la section Projets */
+.projects {
+  padding-top: 100px;
+  background-color: var(--iris-1);
+  color: var(--iris-12);
+}
+.projects h2 {
+  font-family: var(--header-textfont);
+  text-align: center;
+}
+
+.card {
+  background-color: var(--iris-1);
+  overflow: visible;
+  width: 20vw;
+  height: 30vh;
+  min-height: 200px;
+  min-width: 150px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 300ms;
+  box-shadow: 0px 0px 10px 1px var(--iris-2);
+  border-radius: 5px;
+}
+
+.front, .back {
+  background-color: var(--iris-7);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.back {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.back::before {
+  position: absolute;
+  content: ' ';
+  display: block;
+  width: 160px;
+  height: 160%;
+  background: linear-gradient(90deg, transparent, var(--iris-10), var(--iris-10), var(--iris-10), var(--iris-10), transparent);
+  animation: rotation_481 5000ms infinite linear;
+}
+
+.back-content {
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  background-color: var(--iris-2);
+  border-radius: 12px;
+  color: var(--iris-12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.card:hover{
+  border:3px solid var(--iris-8);
+}
+
+.card:hover .content {
+  transform: rotateY(180deg);
+}
+
+@keyframes rotation_481 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  0% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.front {
+  transform: rotateY(180deg);
+  color: var(--iris-12);
+}
+
+.front .front-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.front-content .badge {
+  background-color: var(--iris-4);
+  color: var(--iris-12);
+  padding: 2px 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+  width: fit-content;
+}
+
+.description {
+  box-shadow: 0px 0px 10px 5px var(--iris-2);
+  width: 100%;
+  padding: 10px;
+  background-color: var(--iris-4);
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 11px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title p {
+  width: 50%;
+}
+
+.card-footer {
+  color: var(--iris-12);
+  margin-top: 5px;
+  font-size: 8px;
+}
+
+.front .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.img img{
+  width: 100%;
+  height: 100%;
+}
+
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Styles pour la section Contact */
+.contact {
+  background-color: var(--iris-1);
+  padding-top: 100px;
+}
+.contact h4 {
+  color: var(--iris-12);
+  font-family: var(--header-textfont);
+  font-size: 2rem;
+  text-align: center;
+}
+.contact-content {
+  color: var(--iris-11);
+}
+.btn-ctc{
+  color: var(--iris-12);
+  background-color: var(--iris-9);
+  margin-bottom: 20px;
+}
+.btn-ctc:hover {
+  background-color: var(--iris-10);
+}
+
+/* Styles pour le footer */
+footer {
+  background-color: var(--iris-2);
+}
+.footer-content {
+  color: var(--iris-12);
+  font-family: var(--text-font);
+}
+.footer-content p a {
+  color: var(--iris-12);
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
