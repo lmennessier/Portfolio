@@ -37,6 +37,15 @@
   --iris-12: #e0dffe;
 }
 
+
+
+
+
+
+
+
+
+
 /* Styles pour le header */
 nav {
   border-color: var(--iris-6);
@@ -72,6 +81,10 @@ nav {
 
 
 
+
+
+
+
 /* Styles pour le switch de thème */
 
 /* Supprimer l'icône par défaut */
@@ -87,6 +100,15 @@ nav {
 .navbar-toggler {
   border: 2px solid var(--iris-8);
 }
+
+
+
+
+
+
+
+
+
 
 /* Styles pour l'icône hamburger personnalisée */
 .navbar-toggler-icon::before,
@@ -169,6 +191,19 @@ nav {
   color: var(--iris-1);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Styles pour la section principale */
 .home {
   background-color: var(--iris-1);
@@ -189,21 +224,21 @@ nav {
 
 /* Styles pour l'image de profil */
 .profile-image {
-  width: 250px; /* Ajustez la taille selon vos préférences */
-  height: 250px; /* Ajustez la taille selon vos préférences */
-  border-radius: 50%; /* Pour un effet circulaire */
-  object-fit: cover; /* Pour ajuster l'image au conteneur */
-  border: 2px solid var(--iris-8); /* Optionnel : ajoute une bordure */
+  width: 250px; 
+  height: 250px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  border: 2px solid var(--iris-8); 
 }
 
-/* Ajuster l'espacement */
+/* Ajuste l'espacement */
 .home-content {
-  margin-top: 100px; /* Ajustez si nécessaire */
+  margin-top: 100px; 
 }
 
 @media (max-width: 768px) {
   .home-content {
-    margin-top: 100px; /* Ajustez pour les petits écrans */
+    margin-top: 100px; /* Ajuste pour les petits écrans */
   }
 }
 
@@ -229,7 +264,18 @@ nav {
 }
 
 
-/* Styles pour les logos de contact animés */
+
+
+
+
+
+
+
+
+
+
+
+/* logos de contact animés */
 .contacts-logos a {
   text-decoration: none;
   color: var(--iris-11);
@@ -316,9 +362,25 @@ nav {
   visibility: visible;
 }
 
+
+
+
+
+
+
+
+
+
+
 /* Styles pour la section À propos */
 .about {
   background-color: var(--iris-1);
+  padding-top: 80px;
+  margin-top: -80px;
+}
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .about h3 {
@@ -337,20 +399,20 @@ nav {
   border: 1px solid var(--iris-6);
   border-radius: 20px;
   background-color: var(--iris-2);
-  margin: 20px auto;
-  padding: 20px;
+}
+.about-me {
+  flex: 1 1 40%; /* Prend 40% de la largeur */
+  min-height: 300px; 
+  position: relative;
 }
 
-@media (min-width: 768px) {
-  .card-about {
-    margin: 30px;
-    padding: 20px;
-  }
+.skills {
+  flex: 1 1 40%; /* Prend 40% de la largeur */
+  align-self: flex-start;
+  min-height: 300px; 
 }
 
-.button:hover {
-  color: white;
-}
+
 
 .skills .comps-logos {
   display: flex;
@@ -376,6 +438,24 @@ nav {
   background-color: var(--iris-10);
   transform: scale(1.1);
 }
+
+@media (max-width: 400px) {
+  .CV {
+    font-size: 14px;
+    padding: 10px 5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* Styles pour les compétences */
 
@@ -409,6 +489,15 @@ nav {
   border: 1px solid var(--iris-7);
   border-radius: 50%;
   margin: 10px auto;
+}
+
+
+@media (min-width: 992px) {
+  .comp-btn .bubble {
+    padding: 20px;
+    margin-top: 40px;
+    
+  }
 }
 
 .comp-btn .fab {
@@ -457,6 +546,17 @@ nav {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
 /* Styles pour la section Projets */
 .projects {
   padding-top: 100px;
@@ -472,9 +572,9 @@ nav {
   background-color: var(--iris-1);
   overflow: visible;
   width: 20vw;
-  height: 30vh;
-  min-height: 200px;
-  min-width: 150px;
+  height: 35vh;
+  min-height: 250px;
+  min-width: 200px;
 }
 
 .content {
@@ -611,19 +711,10 @@ nav {
 }
 
 
-@keyframes floating {
-  0% {
-    transform: translateY(0px);
-  }
 
-  50% {
-    transform: translateY(10px);
-  }
 
-  100% {
-    transform: translateY(0px);
-  }
-}
+
+
 
 /* Styles pour la section Contact */
 .contact {
@@ -640,13 +731,20 @@ nav {
   color: var(--iris-11);
 }
 .btn-ctc{
-  color: var(--iris-12);
+  color: var(--iris-1);
   background-color: var(--iris-9);
   margin-bottom: 20px;
 }
 .btn-ctc:hover {
   background-color: var(--iris-10);
+  color: var(--iris-1);
 }
+
+
+
+
+
+
 
 /* Styles pour le footer */
 footer {
@@ -659,6 +757,15 @@ footer {
 .footer-content p a {
   color: var(--iris-12);
   text-decoration: none;
+}
+
+#contact-info{
+  display:none;
+}
+
+#contact-info p{
+  font-family: var(--text-font);
+  color: var(--iris-12);
 }
 
 
