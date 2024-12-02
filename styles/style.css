@@ -85,6 +85,8 @@ nav {
 
 
 
+
+
 /* Styles pour le switch de thème */
 
 /* Supprimer l'icône par défaut */
@@ -142,6 +144,7 @@ nav {
   justify-content: center;
   direction: rtl;
 }
+
 #theme-checkbox {
   display: none;
 }
@@ -177,13 +180,19 @@ nav {
 #theme-checkbox + label span {
   display: flex;
 }
-#theme-checkbox + label svg {
+#theme-checkbox + label i {
   display: inline-block;
   height: 1em;
   width: 1em;
   padding: 0.15em;
   box-sizing: border-box;
+  font-size: 1.5rem;
 }
+#theme-checkbox + label .sun {
+  padding-left: 1.2em;
+ 
+}
+
 #theme-checkbox + label span:first-of-type {
   color: var(--iris-12);
 }
@@ -248,7 +257,7 @@ nav {
 }
 
 /* Style pour le curseur clignotant */
-.cursor {
+.curseur {
   display: inline-block;
   font-weight: normal;
   font-size: inherit;
@@ -375,8 +384,7 @@ nav {
 /* Styles pour la section À propos */
 .about {
   background-color: var(--iris-1);
-  padding-top: 80px;
-  margin-top: -80px;
+ 
 }
 .about-content {
   display: flex;
